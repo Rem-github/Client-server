@@ -2,8 +2,9 @@ import json
 import logging
 import socket
 import sys
-import logs.config_server_log
 from errors import IncorrectDataRecivedError
+import logs.config_server_log
+
 
 from common.utils import get_message, send_message
 from common.variables import *
