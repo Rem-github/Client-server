@@ -6,7 +6,7 @@ import socket
 import time
 import logs.config_client_log
 
-from common.utils import get_message, send_message
+from common.utils import send_message, get_message
 from common.variables import RESPONSE, ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, ERROR, DEFAULT_IP_ADDRESS, \
     DEFAULT_PORT, MESSAGE, MESSAGE_TEXT, SENDER
 from errors import ReqFieldMissingError, ServerError
@@ -72,7 +72,7 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('addr', default=DEFAULT_IP_ADDRESS, nargs='?')
     parser.add_argument('port', default=DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-m', '--mode', default='listen', nargs='?')
+    parser.add_argument('-m', '--mode', default='send', nargs='?')
     namespace = parser.parse_args(sys.argv[1:])
     server_address = namespace.addr
     server_port = namespace.port
